@@ -15,7 +15,7 @@ def get_login_info():
     Config.read(filename)
 
     return {
-           'user' : Config.get("client", "user"),
+           'user' : Config.get("client", "username"),
            'password' : Config.get("client", "password"),
            'host': '127.0.0.1',
            'port': 6033,
