@@ -1,21 +1,25 @@
+import ConfigParser
 import MySQLdb as mdb
+import os.path
+import sys
 
 def get_login_info():
     # this needs to be changed for when it hits 
     # proxy client directly within the container
+    filename = "/var/tmp/my.cnf"
+
+    if not os.path.exists(filename):
+        sys.exit("Error: {0} not found.".format(filename))
+
+    Config = ConfigParser.ConfigParser()
+    Config.read(filename)
+
     return {
-           'user' : 'dba',
-           'password' : 'op3n',
+           'user' : Config.get("client", "user"),
+           'password' : Config.get("client", "password"),
            'host': '127.0.0.1',
            'port': 6033,
            }
-    # root logins when I need it
-#     return {
-#            'user' : 'root',
-#            'password' : 'unset',
-#            'host': 'localhost',
-#            'port': 3306,
-#            }
 
 def connect():
     login_info = get_login_info()
