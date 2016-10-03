@@ -10,6 +10,6 @@ if __name__ == "__main__":
            FROM sakila.payment;  
            """
     while True:       
-        run_sql(stmt)
+        run_sql(stmt, output=None)
 
     

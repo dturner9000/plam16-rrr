@@ -11,6 +11,6 @@ if __name__ == "__main__":
            SELECT /* I'm sleeping */ sleep(5)
            """
     while True:
-        run_sql(stmt)
+        run_sql(stmt, output=None)
         time.sleep(1)
 
