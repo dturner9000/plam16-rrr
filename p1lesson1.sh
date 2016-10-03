@@ -17,7 +17,7 @@ LESSON="$0"
 stmt="delete from mysql_query_rules where comment like '%lesson%'; LOAD MYSQL QUERY RULES TO RUNTIME"
 mysql -vvv -u ${user} -p${password} -h 127.0.0.1  -P6032  -e "${stmt}"
 
-stmt="INSERT INTO mysql_query_rules (active, digest, error_msg, comment) VALUES (1, '0x65496B34FF40E16A', 'Die Giant, Die', \"${LESSON}\"); LOAD MYSQL QUERY RULES TO RUNTIME"
+stmt="INSERT INTO mysql_query_rules (active, digest, error_msg, comment) VALUES (1, '0x65496B34FF40E16A', 'This query has been blocked', \"${LESSON}\"); LOAD MYSQL QUERY RULES TO RUNTIME"
 mysql -vvv -u ${user} -p${password} -h 127.0.0.1  -P6032  -e "${stmt}"
 echo
 echo

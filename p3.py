@@ -27,8 +27,6 @@ if __name__ == "__main__":
                  ;
                  """.format(start_page)
 
-          print stmt
-
           run_sql(stmt, output=None)
 
           time.sleep(.1)
