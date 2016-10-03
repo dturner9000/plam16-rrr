@@ -16,7 +16,7 @@ if __name__ == "__main__":
              """
       rows = run_sql(stmt, output="return")[0]
 
-      while True:       
+      while True:
           start_page = randint(rows['min_id'], rows['max_id'])
 
           stmt = """
@@ -24,14 +24,12 @@ if __name__ == "__main__":
                  FROM sakila.rental
                  ORDER BY rental_id
                  LIMIT {0},10
-                 ;  
+                 ;
                  """.format(start_page)
 
           print stmt
-        
+
           run_sql(stmt, output=None)
 
-#           run_sql("SELECT sleep(5)", output=None)
           time.sleep(.1)
 
-    
