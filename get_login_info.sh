@@ -1,5 +1,10 @@
 #!/bin/bash
 # workaround for image issue
+# requires: password file in /var/tmp/my.cnf
+# with the following:
+# [client]
+# user=<plam_rewrite_username>
+# password=<plam_rewrite_password>
 
 filename=/var/tmp/my.cnf
 
